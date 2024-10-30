@@ -437,22 +437,22 @@ class LocalizationManagerNodelet : public ff_util::FreeFlyerNodelet {
           p.NeedsEnable(enable_topic, enable_timeout);
         }
       }
-      //ZBFT WE HAVE ADD PARSING THE NEW FIELDS IN LOCALIZATION_MANAGER.CONFIG
-      //RATATA TOPIC2
-      // Enable requirement
-      if (pipeline.CheckValExists("enable_topic2")) {
-        std::string enable_topic2;
-        if (pipeline.GetStr("enable_topic2", &enable_topic2)) {
-          double enable_timeout2 = 1.0;
-          if (!pipeline.GetReal("enable_timeout2", &enable_timeout2)) {
-            AssertFault(ff_util::INITIALIZATION_FAILED,
-                        "Could not get enable_timeout");
-          }
+      // //ZBFT WE HAVE ADD PARSING THE NEW FIELDS IN LOCALIZATION_MANAGER.CONFIG
+      // //RATATA TOPIC2
+      // // Enable requirement
+      // if (pipeline.CheckValExists("enable_topic2")) {
+      //   std::string enable_topic2;
+      //   if (pipeline.GetStr("enable_topic2", &enable_topic2)) {
+      //     double enable_timeout2 = 1.0;
+      //     if (!pipeline.GetReal("enable_timeout2", &enable_timeout2)) {
+      //       AssertFault(ff_util::INITIALIZATION_FAILED,
+      //                   "Could not get enable_timeout");
+      //     }
 
-          // Set an enable need
-          p.NeedsEnable(enable_topic2, enable_timeout2);
-        }
-      }
+      //     // Set an enable need
+      //     p.NeedsEnable(enable_topic2, enable_timeout2);
+      //   }
+      // }
 
       // Registration requirement
       if (pipeline.CheckValExists("reg_topic")) {
@@ -469,22 +469,22 @@ class LocalizationManagerNodelet : public ff_util::FreeFlyerNodelet {
         }
       }
 
-      //ZBFT WE HAVE ADD PARSING THE NEW FIELDS IN LOCALIZATION_MANAGER.CONFIG
-      //RATATA REQUIREMENT2
-      // Registration requirement
-      if (pipeline.CheckValExists("reg_topic2")) {
-        std::string reg_topic2;
-        if (pipeline.GetStr("reg_topic2", &reg_topic2)) {
-          double reg_timeout2 = 1.0;
-          if (!pipeline.GetReal("reg_timeout2", &reg_timeout2)) {
-            AssertFault(ff_util::INITIALIZATION_FAILED,
-                        "Could not get reg_timeout");
-          }
+      // //ZBFT WE HAVE ADD PARSING THE NEW FIELDS IN LOCALIZATION_MANAGER.CONFIG
+      // //RATATA REQUIREMENT2
+      // // Registration requirement
+      // if (pipeline.CheckValExists("reg_topic2")) {
+      //   std::string reg_topic2;
+      //   if (pipeline.GetStr("reg_topic2", &reg_topic2)) {
+      //     double reg_timeout2 = 1.0;
+      //     if (!pipeline.GetReal("reg_timeout2", &reg_timeout2)) {
+      //       AssertFault(ff_util::INITIALIZATION_FAILED,
+      //                   "Could not get reg_timeout");
+      //     }
 
-          // Set an enable need
-          p.NeedsRegistrations(reg_topic2, reg_timeout2);
-        }
-      }
+      //     // Set an enable need
+      //     p.NeedsRegistrations(reg_topic2, reg_timeout2);
+      //   }
+      // }
 
       // Visual feature requirement
       if (pipeline.CheckValExists("feat_topic")) {
@@ -506,28 +506,28 @@ class LocalizationManagerNodelet : public ff_util::FreeFlyerNodelet {
           p.NeedsVisualFeatures(feat_topic, feat_timeout, feat_threshold);
         }
       }
-      //ZBFT WE HAVE ADD PARSING THE NEW FIELDS IN LOCALIZATION_MANAGER.CONFIG
-      //RATATA FEATURE2
-      // Visual feature requirement
-      if (pipeline.CheckValExists("feat_topic2")) {
-        std::string feat_topic2;
-        if (pipeline.GetStr("feat_topic2", &feat_topic2)) {
-          double feat_timeout2 = 1.0;
-          if (!pipeline.GetReal("feat_timeout2", &feat_timeout2)) {
-            AssertFault(ff_util::INITIALIZATION_FAILED,
-                        "Could not get feat_timeout");
-          }
+      // //ZBFT WE HAVE ADD PARSING THE NEW FIELDS IN LOCALIZATION_MANAGER.CONFIG
+      // //RATATA FEATURE2
+      // // Visual feature requirement
+      // if (pipeline.CheckValExists("feat_topic2")) {
+      //   std::string feat_topic2;
+      //   if (pipeline.GetStr("feat_topic2", &feat_topic2)) {
+      //     double feat_timeout2 = 1.0;
+      //     if (!pipeline.GetReal("feat_timeout2", &feat_timeout2)) {
+      //       AssertFault(ff_util::INITIALIZATION_FAILED,
+      //                   "Could not get feat_timeout");
+      //     }
 
-          int feat_threshold2 = 0;
-          if (!pipeline.GetInt("feat_threshold2", &feat_threshold2)) {
-            AssertFault(ff_util::INITIALIZATION_FAILED,
-                        "Could not get feat_threshold");
-          }
+      //     int feat_threshold2 = 0;
+      //     if (!pipeline.GetInt("feat_threshold2", &feat_threshold2)) {
+      //       AssertFault(ff_util::INITIALIZATION_FAILED,
+      //                   "Could not get feat_threshold");
+      //     }
 
-          // Set a feature need
-          p.NeedsVisualFeatures(feat_topic2, feat_timeout2, feat_threshold2);
-        }
-      }
+      //     // Set a feature need
+      //     p.NeedsVisualFeatures(feat_topic2, feat_timeout2, feat_threshold2);
+      //   }
+      // }
 
       // Depth feature requirement
       if (pipeline.CheckValExists("depth_topic")) {
