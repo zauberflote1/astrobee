@@ -109,7 +109,7 @@ void RosGraphLocalizerWrapper::ARVisualLandmarksCallback(const ff_msgs::VisualLa
   
   //ZBFT FINDING WORLD_T_DOCK AT EVERY AR TAG DETECTION/CAROLUS
   //UVGS BEACONS CAN MOVE
-  // if (!world_T_dock_) {
+  if (!world_T_dock_) {
     const auto world_T_latest_graph_body = LatestPose();
     const auto latest_graph_timestamp = LatestTimestamp();
     if (!world_T_latest_graph_body || !latest_graph_timestamp) {
@@ -170,7 +170,7 @@ void RosGraphLocalizerWrapper::ARVisualLandmarksCallback(const ff_msgs::VisualLa
 
     world_T_dock_ = world_T_body * dock_T_body.inverse();
     LogInfo("ARVisualLandmarksCallback: Initialized world_T_dock.");
-  // }
+  }
   if (Initialized()) {
     // Frame change the ar tag measurement from the dock to world frame before
     // passing to the localizer.
